@@ -1,125 +1,212 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
-      integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,700;1,700"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Historical Places in Pune</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Crimson Pro', serif;
+            background-color: #f8f9fa;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        .bg-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1582972236019-ea9ab737ee1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .banner-text {
+            padding: 2rem 0;
+        }
+        
+        header h1 {
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        header h1 span {
+            color: #d4af37;
+        }
+        
+        .historical-places-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .place-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .place-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #d4af37;
+        }
+        
+        .place-body {
+            padding: 1.5rem;
+        }
+        
+        .place-name {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .place-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .ratings {
+            margin-bottom: 1rem;
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+        
+        .btn-visit {
+            background-color: #d4af37;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn-visit:hover {
+            background-color: #b5942e;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .place-img {
+                height: 200px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
     <div class="bg-image"></div>
-    <div class="banner-text">
-      <header><h1 style="margin-top: 10px;">Top 3 <span>Historical Places</span> in Pune...</h1></header>
-      <br />
-      <ul>
-        <li class="Shaniwar" >
+    
+    <div class="container banner-text">
+        <header>
+            <h1 class="my-4">Top 3 <span>Historical Places</span> in Pune...</h1>
+        </header>
         
-            <div class="portrait-rectangle one main_container">
-                <a href="https://en.wikipedia.org/wiki/Shaniwar_Wada">
-                    <img
-                      src="./html pics/Shaniwar-wada.jpg"
-                     
-                      class="rounded-image"
-                      style="width: 200px; height: 200px;"
-                      
-                    />
-                    <div class="overlay">
-
-                      <p>It is a historic fortification located in Pune,
-   India, built in the 18th century by the Peshwas. It is known for its 
-   grand architecture .
-
-</p>
+        <div class="row">
+            <!-- Shaniwar Wada -->
+            <div class="col-md-4">
+                <div class="place-card">
+                    <img src="./html pics/Shaniwar.jpg" 
+                         alt="Shaniwar Wada" class="place-img">
+                    <div class="place-body">
+                        <h3 class="place-name">Shaniwar Wada</h3>
+                        <div class="ratings">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="place-description">
+                            It is a historic fortification located in Pune, India, built in the 18th century by the Peshwas. 
+                            It is known for its grand architecture and historical significance.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Shaniwar_Wada" class="btn btn-visit" target="_blank">
+                            Visit Place <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
-                <div class="ratings">
-                 <span class="fa fa-star checked yellow"></span>
-              <span class="fa fa-star checked yellow"></span>
-              <span class="fa fa-star checked yellow"></span>
-              <span class="fa fa-star yellow"></span>
-              <span class="fa fa-star omg"></span>
                 </div>
-                <h3 class="name">Shaniwar Wada</h3>
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            </a>
+            </div>
+            
+            <!-- Aga Khan Palace -->
+            <div class="col-md-4">
+                <div class="place-card">
+                    <img src="./html pics/agakhan.png" 
+                         alt="Aga Khan Palace" class="place-img">
+                    <div class="place-body">
+                        <h3 class="place-name">Aga Khan Palace</h3>
+                        <div class="ratings">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="place-description">
+                            Aga Khan Palace in Pune, India, built in 1892, is known for its historical significance 
+                            as a prison for Mahatma Gandhi during the Quit India Movement.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Aga_Khan_Palace" class="btn btn-visit" target="_blank">
+                            Visit Place <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sinhagad Fort -->
+            <div class="col-md-4">
+                <div class="place-card">
+                    <img src="./html pics/fort.jpg" 
+                         alt="Sinhagad Fort" class="place-img">
+                    <div class="place-body">
+                        <h3 class="place-name">Sinhagad Fort</h3>
+                        <div class="ratings">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="place-description">
+                            It is a historic hill fortress known for its strategic importance in Maratha history. 
+                            It played a key role in many battles and offers a popular trekking destination.
+                        </p>
+                        <a href="https://en.wikipedia.org/wiki/Sinhagad" class="btn btn-visit" target="_blank">
+                            Visit Place <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-          </li>
-        <li class="agakhan">
-          <div class="portrait-rectangle two main_container">
-          <a href="https://en.wikipedia.org/wiki/Aga_Khan_Palace">
-            <img
-              src="./html pics/aga1.png"
-              style="width: 200px; height: 200px;"
-
-              class="rounded-image"/>
-              <div class="overlay">
-<p>Aga Khan Palace in Pune, India, built in 1892, is known for its 
-  its historical significance as a prison for Mahatma Gandhi .
-   </p>
-   </div>
-          <div class="ratings">
-            <span class="fa fa-star checked yellow"></span>
-         <span class="fa fa-star checked yellow"></span>
-         <span class="fa fa-star checked yellow"></span>
-         <span class="fa fa-star yellow"></span>
-         <span class="fa fa-star yellow "></span>
-           </div>
-           <h3 class="name">Aga Khan Palace</h3>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          </a>
-        </div>
-
-        
-        </li>
-        <li class="sinhagad">
-          <div class="portrait-rectangle three main_container">
-
-          <a href="https://en.wikipedia.org/wiki/Sinhagad">
-            <img
-              src="./html pics/sin.jpg"
-              style="width: 200px; height: 200px;"
-
-              class="rounded-image"
-            />
-            <div class="overlay">
-<p>It is a historic hill fortress known
-   for its strategic importance 
-  It played a key role in Maratha history and offers a popular trekking destination.</p>
-  </div>        
-  <div class="ratings">
-              <span class="fa fa-star checked yellow"></span>
-           <span class="fa fa-star checked yellow"></span>
-           <span class="fa fa-star checked yellow"></span>
-           <span class="fa fa-star yellow "></span>
-           <span class="fa fa-star omg"></span>
-             </div>
-             <h3 class="name">Sinhagad Fort</h3>
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          </div>
-
-          </a>
-        </li>
-      </ul>
     </div>
-  </body>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
